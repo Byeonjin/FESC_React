@@ -29,14 +29,6 @@ ul {
   padding-left: 1em;
 }
 
-button {
-  cursor: pointer;
-}
-
 button:disabled {
-  cursor: not-allowed;
-}
-
-button svg {
-  pointer-events: none;
+  /* cursor: not-allowed; */
 }
