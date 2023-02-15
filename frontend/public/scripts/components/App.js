@@ -19,7 +19,8 @@ var App = /*#__PURE__*/function (_React$Component) {
     _classCallCheck(this, App);
     _this = _super.call(this, props);
     _this.state = {
-      headline: 'React Application'
+      headline: "React Application",
+      isUpdateHeadline: false
     };
     _this.handleChangeHeadline = _this.handleChangeHeadline.bind(_assertThisInitialized(_this));
     return _this;
@@ -27,9 +28,24 @@ var App = /*#__PURE__*/function (_React$Component) {
   _createClass(App, [{
     key: "handleChangeHeadline",
     value: function handleChangeHeadline() {
+      if (this.state.isUpdateHeadline) {
+        this.setState({
+          headline: "React Application",
+          isUpdateHeadline: false
+        });
+      } else {
+        this.setState({
+          headline: "NEW HEADLINE! 😃",
+          isUpdateHeadline: true
+        });
+      }
+
+      /* 
       this.setState({
-        headline: 'NEW HEADLINE! 😃'
-      });
+        headline: "NEW HEADLINE! 😃",
+        isUpdateHeadline: true,
+      }); 
+      */
     }
   }, {
     key: "render",
@@ -39,6 +55,7 @@ var App = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/React.createElement("h1", null, this.state.headline), /*#__PURE__*/React.createElement("button", {
         type: "button",
         onClick: this.handleChangeHeadline
+        // disabled={this.state.isUpdateHeadline}
       }, "\uD5E4\uB4DC\uB77C\uC778 \uC5C5\uB370\uC774\uD2B8"));
     }
   }]);
