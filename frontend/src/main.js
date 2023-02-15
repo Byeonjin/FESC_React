@@ -1,7 +1,9 @@
-const callReact = (props, type, ...children) => {
-  return (
-    <div>
-      <div></div>
-    </div>
-  );
-};
+import App from './components/App.js';
+
+const reactDomRoot = ReactDOM.createRoot(document.getElementById('root'));
+
+reactDomRoot.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
