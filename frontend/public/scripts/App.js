@@ -228,8 +228,10 @@ var App = /*#__PURE__*/ (function (_React$Component) {
       var _this$state = this.state,
         isToggle = _this$state.isToggle,
         isPaid = _this$state.isPaid,
-        headline = _this$state.headline;
-      if (this.state.isLoading) {
+        headline = _this$state.headline,
+        hasError = _this$state.hasError,
+        likeLionMembers = _this$state.likeLionMembers;
+      if (isLoading) {
         return /*#__PURE__*/React.createElement("div", {
           role: "alert"
         }, "\uB370\uC774\uD130 \uB85C\uB529 \uC911...");

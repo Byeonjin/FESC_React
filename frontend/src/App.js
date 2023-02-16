@@ -21,6 +21,7 @@ class App extends React.Component {
     isToggle: false,
     isLoading: !true,
     hasError: null,
+    // likeLionMembers
   };
 
   originalHeadline = this.state.headline;
@@ -86,7 +87,14 @@ class App extends React.Component {
   };
 
   render() {
-    const { isToggle, isPaid, headline } = this.state;
+    const { 
+      isLoading, 
+      isToggle, 
+      isPaid, 
+      headline, 
+      hasError, 
+      likeLionMembers 
+    } = this.state;
 
     if (this.state.isLoading) {
       return <div role="alert">데이터 로딩 중...</div>;
