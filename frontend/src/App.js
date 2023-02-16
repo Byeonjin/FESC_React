@@ -20,7 +20,7 @@ class App extends React.Component {
     isPaid: true,
     isToggle: false,
     isLoading: !true,
-    hasError: null, // { message: '서버에서 적절하지 않은 요청이 있었다는 응답이 있었습니다.' },
+    hasError: null,
   };
 
   originalHeadline = this.state.headline;
@@ -67,10 +67,12 @@ class App extends React.Component {
       this.setState({
         isToggle: false,
         headline: this.originalHeadline,
+        headline: this.originalHeadline,
       });
     } else {
       this.setState({
         isToggle: true,
+        headline: this.willUpdateHeadline,
         headline: this.willUpdateHeadline,
       });
     }
@@ -94,6 +96,7 @@ class App extends React.Component {
       return <div role="alert">{this.state.hasError.message}</div>;
     }
 
+    return <Home />;
     return <Home />;
 
     return (
