@@ -1,29 +1,10 @@
 ###### EUID ╳ Likelion
 
-# JSX & React
+# React 툴체인
 
-학습 저장소 자료 복사 ([degit](https://github.com/Rich-Harris/degit#readme) 활용)
+웹 브라우저 환경에서 React를 사용하는 방법을 학습 했지만, 그것만으로는 부족합니다.
+어떤 점이 부족하며 그것을 채우기 위한 개발 환경을 직접 또는 툴체인을 사용해 구성하는 방법을 학습합니다.
 
-```sh
-degit yamoo9/likelion-react#03-jsx-in-depth 03-jsx-in-depth
-```
-
-## 학습 목표
-
-XML과 유사한 문법을 제공하는 ECMAScript 확장인 JSX에 대해 학습합니다.
-
-- React 그리고 JSX
-- JSX vs. HTML 구조 설계
-- JSX의 역할 (creating React Element)
-- JSX 컴파일러
-- Babel
-- TypeScript
-- 조건부 렌더링
-- 조건부 표시
-- 문과 식
-- 리스트 렌더링
-- 배열 메서드
-- React 이벤트 핸들링
-- 이벤트 위임, 전파, 핸들링
-- React 폼(Form)
-- 컨트롤 vs. 언-컨트롤 컴포넌트
+- Webpack
+- Create React App
+- Vite + Vitest
