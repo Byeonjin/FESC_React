@@ -1,6 +1,7 @@
-import LogIn from "./pages/LogIn.js";
-import Browse from "./pages/Browse.js";
-import Home from "./pages/Home.js";
+import LogIn from './pages/LogIn.js';
+import Browse from './pages/Browse.js';
+import EventHandling from './pages/EventHandling.js';
+import DescriptionListRendering from './pages/DescriptionListRendering.js';
 
 class App extends React.Component {
   // 조건부 렌더링 (CSR) vs. 조건부 표시 (CSS : display, visibility, overflow, opacity)
@@ -21,7 +22,6 @@ class App extends React.Component {
     isToggle: false,
     isLoading: !true,
     hasError: null,
-    // likeLionMembers
   };
 
   originalHeadline = this.state.headline;
@@ -104,24 +104,21 @@ class App extends React.Component {
       return <div role="alert">{this.state.hasError.message}</div>;
     }
 
-    return <Home />;
-    return <Home />;
-
     return (
       <div className="App">
         <h1>{headline}</h1>
-        <button
-          // disabled={this.state.isDisabled}
-          type="button"
-          onClick={this.handleChangeHeadline}
-        >
-          {isToggle ? "오리지널 헤드라인으로 변경" : "뉴 헤드라인으로 변경"}
+
+        <DescriptionListRendering />
+
+        {/* <EventHandling /> */}
+
+        {/* <button type="button" onClick={this.handleChangeHeadline}>
+          {isToggle ? '오리지널 헤드라인으로 변경' : '뉴 헤드라인으로 변경'}
         </button>
 
         <LogIn />
 
-        {/* 조건부 렌더링 (화면에 그리지 않음: 민감, 보안, 결제 등 요구) */}
-        {isPaid && <Browse />}
+        {isPaid && <Browse />} */}
       </div>
     );
   }

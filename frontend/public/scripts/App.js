@@ -241,7 +241,6 @@ var App = /*#__PURE__*/ (function (_React$Component) {
           role: "alert"
         }, this.state.hasError.message);
       }
-      return /*#__PURE__*/React.createElement(Home, null);
       return /*#__PURE__*/React.createElement("div", {
         className: "App"
       }, /*#__PURE__*/React.createElement("h1", null, headline), /*#__PURE__*/React.createElement("button", {
