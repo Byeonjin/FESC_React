@@ -44,11 +44,3 @@ React가 제어하는 컴포넌트와 제어하지 않는 컴포넌트에 대해
 ```sh
 degit yamoo9/likelion-react#06-stateful-component-form 06-stateful-component-form
 ```
-
-## 학습 저장소 자료
-
-자료 복사는 [degit](https://github.com/Rich-Harris/degit#readme) 명령을 사용하세요.
-
-```sh
-degit yamoo9/likelion-react#05-stateless-component 05-stateless-component
-```
