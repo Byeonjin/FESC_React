@@ -1,8 +1,8 @@
-import { useCallback, useRef, useState } from 'react';
+import { useRef } from 'react';
 import { BaseLayout, FormInput, Button, Notification } from '@/components';
-import { useDocumentTitle } from '@/hooks/useDocumentTitle';
 import classes from './SignUp.module.scss';
 import { createAuthUser } from '@/firebase/auth';
+import { useDocumentTitle, useToggle } from '@/hooks';
 
 const initialFormState = {
   name: '',
@@ -16,15 +16,7 @@ const initialFormState = {
 export default function SignUp() {
   useDocumentTitle('회원가입 → Likelion 4th');
 
-  const [isVisibleNoti, setIsVisibleNoti] = useState(false);
-
-  const handleVisibleNoti = useCallback(() => {
-    setIsVisibleNoti(true);
-  }, []);
-
-  const handleInVisibleNoti = useCallback(() => {
-    setIsVisibleNoti(false);
-  }, []);
+  const { toggle, onToggle, offToggle } = useToggle();
 
   const formStateRef = useRef(initialFormState);
 
@@ -98,11 +90,11 @@ export default function SignUp() {
         </div>
       </form>
 
-      <Notification show={isVisibleNoti} onClose={handleVisibleNoti}>
+      <Notification show={toggle} onClose={offToggle}>
         이미 가입된 이메일입니다.
       </Notification>
 
-      <button type="button" onClick={handleInVisibleNoti}>
+      <button type="button" onClick={onToggle}>
         노티피케이션 열기
       </button>
     </BaseLayout>
