@@ -1,8 +1,7 @@
 import { useRef } from 'react';
-import { BaseLayout, FormInput, Button, Notification } from '@/components';
+import { BaseLayout, FormInput, Button } from '@/components';
 import classes from './SignUp.module.scss';
-import { createAuthUser } from '@/firebase/auth';
-import { useDocumentTitle, useToggle } from '@/hooks';
+import { useDocumentTitle } from '@/hooks';
 
 const initialFormState = {
   name: '',
@@ -13,10 +12,11 @@ const initialFormState = {
 
 /* Component ---------------------------------------------------------------- */
 
-export default function SignUp() {
+// eslint-disable-next-line react/prop-types
+export default function SignUp({ logoLabel, navList }) {
   useDocumentTitle('회원가입 → Likelion 4th');
 
-  const { toggle, onToggle, offToggle } = useToggle();
+  /* -------------------------------------------------------------------------- */
 
   const formStateRef = useRef(initialFormState);
 
@@ -41,8 +41,7 @@ export default function SignUp() {
       return;
     }
 
-    const { user } = await createAuthUser(email, password);
-    console.log(user);
+    console.log({ name, email, password, passwordConfirm });
   };
 
   const handleChangeInput = (e) => {
@@ -51,7 +50,11 @@ export default function SignUp() {
   };
 
   return (
-    <BaseLayout className={classes.SignUp}>
+    <BaseLayout
+      logoLabel={logoLabel}
+      navList={navList}
+      className={classes.SignUp}
+    >
       <h2>회원가입 페이지</h2>
 
       <form
@@ -89,14 +92,6 @@ export default function SignUp() {
           </Button>
         </div>
       </form>
-
-      <Notification show={toggle} onClose={offToggle}>
-        이미 가입된 이메일입니다.
-      </Notification>
-
-      <button type="button" onClick={onToggle}>
-        노티피케이션 열기
-      </button>
     </BaseLayout>
   );
 }
