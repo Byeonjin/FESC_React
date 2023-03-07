@@ -11,6 +11,9 @@ import HomePage from '@/pages/Home/HomePage';
 import SignInPage from '@/pages/SignIn/SignInPage';
 import SignUpPage from '@/pages/SignUp/SignUpPage';
 import TodoListPage from '@/pages/TodoList/TodoListPage';
+import UploadFilesPage from '@/pages/UploadFiles/UploadFilesPage';
+import DataBasePage from '@/pages/DataBase/DataBasePage';
+import NotFoundPage from '@/pages/NotFound/NotFoundPage';
 
 /* Component ---------------------------------------------------------------- */
 
@@ -18,13 +21,16 @@ function App() {
   return (
     <Router>
       <div className={classes.App}>
+        {/* Client Side Routing → Single Page Application */}
         <BaseLayout>
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/signup" element={<SignUpPage />} />
             <Route path="/signin" element={<SignInPage />} />
             <Route path="/todolist" element={<TodoListPage />} />
-            {/* 404 Not Found → <NotFound  /> */}
+            <Route path="/storage" element={<UploadFilesPage />} />
+            <Route path="/database" element={<DataBasePage />} />
+            <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </BaseLayout>
       </div>
